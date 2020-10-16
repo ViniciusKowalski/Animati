@@ -57,7 +57,7 @@ function montaTr(paciente) {
     pacienteTr.appendChild(montaTd(paciente.atendimento, 'info-atendimento'));
     pacienteTr.appendChild(montaTd(paciente.chegada, 'info-chegada'));
 
-    //* Tentativa de adicionar o link para chamar o paciente
+    // > Tentativa de adicionar o link para chamar o paciente
     //pacienteTr.appendChild(montaTd(paciente.chamar, 'info-chamar').append(document.write(("<a>").addClass("botao-chamar").attr("href", "#").value(Chamar))));
 
     return pacienteTr;

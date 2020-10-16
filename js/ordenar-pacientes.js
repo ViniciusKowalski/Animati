@@ -1,4 +1,4 @@
-
+// > Tentativa de ordenação dos registros
 var botaoOrdenar = document.querySelector('.ordenar-pacientes');
 
 botaoOrdenar.addEventListener('click', function() {

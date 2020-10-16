@@ -38,7 +38,17 @@
 							<td class="info-cpf">987.908.765-89</td>
 							<td class="info-atendimento">Prioritário</td>
 							<td class="info-chegada">2020-10-15</td>
-							<td class="info-chamar"> <a class="link-chamar" href="#">Chamar</a> </td>
+
+							<td class="info-chamar"> <a href="#openModal">Chamar</a>
+								<div id="openModal" class="modalDialog">
+								  <div>
+									<a href="#close" title="Close" class="close">X</a>
+									<h2>Chamar Paciente</h2>
+									<p>Aqui apareceria o nome do paciente</p>
+								  </div>
+								</div> 
+							</td>
+
 						</tr>
 
 						<tr class="paciente" >
@@ -47,10 +57,23 @@
 							<td class="info-cpf">786.567.847-34</td>
 							<td class="info-atendimento">Normal</td>
 							<td class="info-chegada">2020-10-16</td>
-							<td class="info-chamar"> <a class="link-chamar" href="#">Chamar</a> </td>
+
+							<td class="info-chamar"> <a href="#openModal">Chamar</a>
+								<div id="openModal" class="modalDialog">
+								  <div>
+									<a href="#close" title="Close" class="close">X</a>
+									<h2>Chamar Paciente</h2>
+									<p>Aqui apareceria o nome do paciente</p>
+								  </div>
+								</div> 
+							</td>
+
 						</tr>
 					</tbody>
 				</table>
+				<!--Criação do botão para ordenar, mas sem a funcionalidade (teste)-->
+				<button id="ordenar-pacientes" class="botao bto-principal">Ordenar Pacientes</button>
+
 			</section>
 		</main>
 		<!-- Formulário para adicionar novos pacientes -->
