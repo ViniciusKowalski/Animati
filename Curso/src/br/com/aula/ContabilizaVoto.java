@@ -16,6 +16,8 @@ public class ContabilizaVoto {
 		do {
 			opcaoMesario = Integer.parseInt(JOptionPane.showInputDialog("Mesário digite a opção - 1) Iniciar voto do próximo eleitor, 2) Finalizar Votação"));
 			
+			if (opcaoMesario == 1) {
+			
 				votoEleitor = Integer.parseInt(JOptionPane.showInputDialog("Codigo: 1\n"
 						+ "Nome: Angela Pepino\n"
 						+ "Partido: PMDB\n"
@@ -47,6 +49,11 @@ public class ContabilizaVoto {
 				} else {
 					contador5++;
 				}
+			} else if (opcaoMesario == 2) {
+				break;
+			} else {
+				JOptionPane.showMessageDialog(null, "Por favor, digite uma opção válida!");
+			}
 			
 		}
 		while(opcaoMesario!=2);
