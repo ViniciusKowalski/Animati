@@ -7,17 +7,17 @@ public class ContabilizaVoto {
 	public static void main(String[] args) {
 		int opcaoMesario = 0;
 		int votoEleitor = 0;
-		int contador1 = 0;
-		int contador2 = 0;
-		int contador3 = 0;
-		int contador4 = 0;
-		int contador5 = 0;
-		
+		int contadorCandidato1 = 0;
+		int contadorCandidato2 = 0;
+		int contadorCandidato3 = 0;
+		int contadorCandidato4 = 0;
+		int contadorCandidato5 = 0;
+
 		do {
 			opcaoMesario = Integer.parseInt(JOptionPane.showInputDialog("Mesário digite a opção - 1) Iniciar voto do próximo eleitor, 2) Finalizar Votação"));
-			
+			// Integer.valueOf
 			if (opcaoMesario == 1) {
-			
+
 				votoEleitor = Integer.parseInt(JOptionPane.showInputDialog("Codigo: 1\n"
 						+ "Nome: Angela Pepino\n"
 						+ "Partido: PMDB\n"
@@ -37,51 +37,51 @@ public class ContabilizaVoto {
 						+ "Voto em Branco\n"
 						+ "\n"
 						+ "Eleitor, em quem você deseja votar: "));
-				
+
 				if (votoEleitor == 1) {
-					contador1++;
+					contadorCandidato1++;
 				} else if (votoEleitor == 2){
-					contador2++;
+					contadorCandidato2++;
 				} else if(votoEleitor == 3) {
-					contador3++;
+					contadorCandidato3++;
 				}else if(votoEleitor == 4) {
-					contador4++;
+					contadorCandidato4++;
 				} else {
-					contador5++;
+					contadorCandidato5++;
 				}
 			} else if (opcaoMesario == 2) {
 				break;
 			} else {
 				JOptionPane.showMessageDialog(null, "Por favor, digite uma opção válida!");
 			}
-			
+
 		}
 		while(opcaoMesario!=2);
-		
+
 		JOptionPane.showMessageDialog(null, "Codigo: 1\n"
 				+ "Nome: Angela Pepino\n"
 				+ "Partido: PMDB\n"
-				+ "Total de votos: " + contador1 + "\n"
+				+ "Total de votos: " + contadorCandidato1 + "\n"
 				+ "\n"
 				+ "Codigo: 2\n"
 				+ "Nome: Gean da Silva\n"
 				+ "Partido: PT\n"
-				+ "Total de votos: " + contador2 + "\n"
+				+ "Total de votos: " + contadorCandidato2 + "\n"
 				+ "\n"
 				+ "Codigo: 3\n"
 				+ "Nome: Cesar Souza Neto\n"
 				+ "Partido: DEM\n"
-				+ "Total de votos: " + contador3 + "\n"
+				+ "Total de votos: " + contadorCandidato3 + "\n"
 				+ "\n"
 				+ "Codigo: 4\n"
 				+ "Voto Nulo\n"
-				+ "Total de votos: " + contador4 + "\n"
+				+ "Total de votos: " + contadorCandidato4 + "\n"
 				+ "\n"
 				+ "Codigo: 5\n"
 				+ "Voto em Branco\n"
-				+ "Total de votos: " + contador5 + "\n"
+				+ "Total de votos: " + contadorCandidato5 + "\n"
 				+ "\n"
-				+ "Total de eleitores que votaram: " + (contador1 + contador2 + contador3 + contador4 + contador5));
+				+ "Total de eleitores que votaram: " + (contadorCandidato1 + contadorCandidato2 + contadorCandidato3 + contadorCandidato4 + contadorCandidato5));
 	}
 
 }
