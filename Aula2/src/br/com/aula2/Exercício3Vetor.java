@@ -18,7 +18,7 @@ public class Exercício3Vetor {
 		elemento1 = vetor[0];
 		vetor[0] = vetor[ultimoElemento];
 		System.out.println("O primeiro elemento que era " + elemento1 + " passa a valer: " + vetor[0]);
-		//JOptionPane.showMessageDialog(null, "");
+
 	}
 
 }

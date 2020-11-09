@@ -15,7 +15,7 @@ public class Exercicio1Lista {
 			vetor.add("NOME " + i);
 		}
 
-		int m = Integer.valueOf(JOptionPane.showInputDialog(null, "Qual posicao vc quer ler?"));
+		int m = Integer.valueOf(JOptionPane.showInputDialog(null, "Qual posicao você quer ler?"));
 
 		System.out.println(vetor.get(m));
 	}

@@ -6,9 +6,16 @@ public class Exercicio2Vetor {
 
 	public static void main(String[] args) {
 		
-		int contador = Integer.valueOf(JOptionPane.showInputDialog(null, "Qual o número de elementos do vetor?"));
+		int contador = 0;
 		int soma = 0;
 		int[] vetor = new int[contador];
+		
+		try {
+		contador = Integer.valueOf(JOptionPane.showInputDialog(null, "Qual o número de elementos do vetor?"));
+		}
+		catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 		
 		for (int i = 0; i < vetor.length; i++) {
 			vetor[i] = Integer.valueOf(JOptionPane.showInputDialog(null, "Digite o elemento da posição " + i + " :"));
