@@ -20,7 +20,7 @@ public class Exercicio2Vetor {
 		for (int i = 0; i < vetor.length; i++) {
 			vetor[i] = Integer.valueOf(JOptionPane.showInputDialog(null, "Digite o elemento da posição " + i + " :"));
 			System.out.println(vetor[i]);
-			soma = soma + vetor[i];
+			soma += vetor[i];
 			System.out.println("A soma dos elementos: " + soma);
 		}
 		JOptionPane.showMessageDialog(null,"A soma dos valores do vetor com " + contador + " índices é: " + soma);
