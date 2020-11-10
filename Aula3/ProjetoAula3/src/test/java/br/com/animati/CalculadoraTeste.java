@@ -11,11 +11,11 @@ import org.junit.Test;
 
 public class CalculadoraTeste {
 
-	private static Calculadora calculadora;
+	private static Calculator calculator;
 	
 	@BeforeClass
 	public static void inicCalculadora() {
-		calculadora = new CalculadoraImpl();
+		calculator = new CalculatorImpl();
 	}
 	
 	@Before
@@ -30,7 +30,7 @@ public class CalculadoraTeste {
 	
 	@Test
 	public void testeSoma() {
-		int resultado = calculadora.sum(3, 4);
+		int resultado = calculator.sum(3, 4);
 		
 		assertEquals(7, resultado);
 	}
@@ -38,7 +38,7 @@ public class CalculadoraTeste {
 	@Test
 	public void testDivision() {
 		try {
-			int resultado = calculadora.divison(10, 2);
+			int resultado = calculator.divison(10, 2);
 			
 			assertEquals(5, resultado);
 		} catch (Exception e) {
@@ -48,13 +48,13 @@ public class CalculadoraTeste {
 	
 	@Test(expected = Exception.class)
 	public void testeDivisaoExcecao() throws Exception {
-		calculadora.divison(10, 0);
+		calculator.divison(10, 0);
 	}
 	
 	@Ignore
 	@Test
 	public void testeIgualdade() {
-		boolean resultado = calculadora.equalIntegers(20, 20);
+		boolean resultado = calculator.equalIntegers(20, 20);
 		
 		assertTrue(resultado);
 	}

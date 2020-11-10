@@ -1,6 +1,6 @@
 package br.com.animati;
 
-public interface Calculadora {
+public interface Calculator {
 	
 	int sum(int a, int b);
 
