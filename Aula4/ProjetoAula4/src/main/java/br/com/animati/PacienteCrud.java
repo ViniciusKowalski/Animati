@@ -6,7 +6,7 @@ public interface PacienteCrud {
 	
 	public void add(Paciente p);
 	public void edit(Paciente p);
-	public List<Paciente> list();
+	public List list(Paciente p);
 	public void delete(long idPaciente);
 	public Paciente findById(long idPaciente);
 	
