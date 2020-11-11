@@ -2,7 +2,7 @@ package br.com.animati;
 
 public class Paciente {
 
-	private String idPaciente;
+	private long idPaciente;
 	private String empresa;
 	private String nome;
 	private String nomeSocial;
@@ -27,10 +27,10 @@ public class Paciente {
 	private String patid;
 	private String cartaoSus;
 	
-	public String getIdPaciente() {
+	public long getIdPaciente() {
 		return idPaciente;
 	}
-	public void setIdPaciente(String idPaciente) {
+	public void setIdPaciente(long idPaciente) {
 		this.idPaciente = idPaciente;
 	}
 	
