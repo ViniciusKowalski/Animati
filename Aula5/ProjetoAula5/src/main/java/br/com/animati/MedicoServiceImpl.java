@@ -6,11 +6,11 @@ import java.util.List;
 public class MedicoServiceImpl implements MedicoService {
 
 	private List<Medico> listaMedicos;
-	
+
 	public MedicoServiceImpl() {
 		listaMedicos = new ArrayList<Medico>();
 	}
-	
+
 	public void add(Medico m) throws Exception {
 		if(m.getCrm() == null)
 			throw new Exception("Favor inserir CRM");
@@ -18,8 +18,10 @@ public class MedicoServiceImpl implements MedicoService {
 	}
 
 	public void edit(Medico m) {
-		// TODO Auto-generated method stub
-		
+		//Medico medicoEditar = findMedicoByCrm(m.getCrm());
+
+
+
 	}
 
 	public List<Medico> list() {
@@ -27,8 +29,16 @@ public class MedicoServiceImpl implements MedicoService {
 	}
 
 	public void delete(long idMedico) {
-		// TODO Auto-generated method stub
-		
+		boolean encontrar = true;
+		int indice = 0;
+
+		do {
+			if(listaMedicos.get(indice).getIdMedico() == idMedico) {
+				listaMedicos.remove(indice);
+				encontrar = false;
+			}
+			indice++;
+		} while (encontrar);
 	}
 
 	public Medico findMedicoByCrm(String crm) {
