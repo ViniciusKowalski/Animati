@@ -1,5 +1,14 @@
 package br.com.animati;
 
-public class MedicoTest {
+import static org.junit.Assert.assertEquals;
 
+import org.junit.Before;
+import org.junit.Test;
+
+public class MedicoTest {
+	
+	private MedicoService medicoService;
+	
+	@Test
+	
 }

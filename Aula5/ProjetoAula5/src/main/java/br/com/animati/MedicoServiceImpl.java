@@ -18,10 +18,21 @@ public class MedicoServiceImpl implements MedicoService {
 	}
 
 	public void edit(Medico m) {
-		//Medico medicoEditar = findMedicoByCrm(m.getCrm());
+		Medico medicoEditar = findById(m.getIdMedico());
 
-
-
+		if(medicoEditar != null) {
+			medicoEditar.setProfissao(m.getProfissao());
+			medicoEditar.setConselhoProfissional(m.getConselhoProfissional());
+			medicoEditar.setCrm(m.getCrm());
+			medicoEditar.setCns(m.getCns());
+			medicoEditar.setEstadoCrm(m.getEstadoCrm());
+			medicoEditar.setSolicitante(m.getSolicitante());
+			medicoEditar.setExecutor(m.getExecutor());
+			medicoEditar.setAnestesista(m.getAnestesista());
+			medicoEditar.setProvisorio(m.getProvisorio());
+		} else {
+			System.out.println("Por favor, verifique o Id do Médico.");
+		}
 	}
 
 	public List<Medico> list() {
