@@ -8,7 +8,7 @@ public interface MedicoService {
 	public void edit(Medico m);
 	public List<Medico> list();
 	public void delete(long idMedico);
-	//public Paciente findById(long idMedico);
+	public Medico findById(long idMedico);
 	public Medico findMedicoByCrm(String crm);
 	public Medico findMedicoByCrmAndEstado(String crm);
 	public Medico findMedicoByExecutor();

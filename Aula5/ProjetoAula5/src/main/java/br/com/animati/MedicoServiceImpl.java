@@ -40,15 +40,52 @@ public class MedicoServiceImpl implements MedicoService {
 			indice++;
 		} while (encontrar);
 	}
+	
+	public Medico findById(long idMedico) {
+		Medico medicoEncontrado = null;
+		boolean encontrar = true;
+		int indice = 0;
+		
+		do {
+			if(listaMedicos.get(indice).getIdMedico() == idMedico) {
+				medicoEncontrado = listaMedicos.get(indice);
+				encontrar = false;
+			}
+		} while (encontrar);
+		
+		return medicoEncontrado;
+	}
 
 	public Medico findMedicoByCrm(String crm) {
-		// TODO Auto-generated method stub
-		return null;
+		Medico medicoEncontrado = null;
+		boolean encontrar = true;
+		int indice = 0;
+		do {
+			if (listaMedicos.get(indice).getCrm() == crm) {
+				medicoEncontrado = listaMedicos.get(indice);
+				encontrar = false;
+			}
+			
+			indice++;
+			
+		} while (encontrar);
+		
+		return medicoEncontrado;
 	}
 
 	public Medico findMedicoByCrmAndEstado(String crm) {
-		// TODO Auto-generated method stub
-		return null;
+		Medico medicoEncontrado = null;
+		boolean encontrar = true;
+		int indice = 0;
+		do {
+			if(listaMedicos.get(indice).getCrm() == crm) { //implementar a procura também pelo estado 
+				medicoEncontrado = listaMedicos.get(indice);
+				encontrar = false;
+			}
+			indice++;
+		} while(encontrar);
+		
+		return medicoEncontrado;
 	}
 
 	public Medico findMedicoByExecutor() {
