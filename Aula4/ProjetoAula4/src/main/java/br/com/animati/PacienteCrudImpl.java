@@ -4,26 +4,29 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class PacienteCrudImpl implements PacienteCrud {
-	
-	private ArrayList<Paciente> pacientes;
-	
+
+	private ArrayList<Paciente> listaPacientes;
+
 	public ArrayList<Paciente> getPaciente() {
-		return pacientes;
+		return listaPacientes;
 	}
-	
+
 	public PacienteCrudImpl() {
-		this.pacientes = new ArrayList<Paciente>();
+		this.listaPacientes = new ArrayList<Paciente>();
 	}
 
 	@Override
-	public void add(Paciente p) {
-		 pacientes.add(p);
+	public void add(Paciente p) throws Exception {
+		// tratamento de erro
+		if(p.getRg() == null)
+			throw new Exception("Favor inserir RG");
+		listaPacientes.add(p);
 	}
 
 	@Override
 	public void edit(Paciente p) {
 		Paciente pacienteEditar = findById(p.getIdPaciente());
-		
+
 		if (pacienteEditar != null) {
 			pacienteEditar.setEmpresa(p.getEmpresa());
 			pacienteEditar.setNome(p.getNome());
@@ -48,23 +51,23 @@ public class PacienteCrudImpl implements PacienteCrud {
 			pacienteEditar.setTelefoneTrabalho(p.getTelefoneTrabalho());
 			pacienteEditar.setPatid(p.getPatid());
 			pacienteEditar.setCartaoSus(p.getCartaoSus());
-			
+
 		} else {
 			System.out.println("Por favor, verifique o Id do paciente.");
 		}
 	}
-	
+
 	@Override
 	public List<Paciente> list() {
-		return pacientes;
+		return listaPacientes;
 	}
 
 	@Override
 	public void delete(long idPaciente) {
 		Paciente pacienteExcluir = findById(idPaciente);
-		
+
 		if(pacienteExcluir != null) {
-			pacientes.remove(pacienteExcluir);
+			listaPacientes.remove(pacienteExcluir);
 		} else {
 			System.out.println("Por favor, verifique o Id do paciente.");
 		}
@@ -72,17 +75,34 @@ public class PacienteCrudImpl implements PacienteCrud {
 
 	@Override
 	public Paciente findById(long idPaciente) {
-		
-		Paciente pacienteLocalizar;
-		
-		for (int i = 0; i < pacientes.size(); i++) {
-			pacienteLocalizar = pacientes.get(i);
+
+		Paciente pacienteLocalizar = null;
+		boolean encontrou = true;
+		int indice = 0;
+		do {
+			if (listaPacientes.get(indice).getIdPaciente() == idPaciente) {
+				pacienteLocalizar = listaPacientes.get(indice); 
+			}
+		} while (encontrou);
+		return pacienteLocalizar;
+	}
+
+	// procurar um laço de repetição mais adequado -> Do While
+	/* Paciente pacienteLocalizar;
+	 * for (int i = 0; i < listaPacientes.size(); i++) {
+			pacienteLocalizar = listaPacientes.get(i);
 			if (pacienteLocalizar.getIdPaciente() == idPaciente) {
 				return pacienteLocalizar;
 			}
 		}
-		
-		return null;
-	}
 
+	return null;
+}*/
+
+	/* Trabalhar diretamente com o Objeto Paciente e não baseado em posição !
+	 * Uma forma melhor de fazer o FOR
+
+		for (Paciente paciente: listaDePacientes){
+    // codigo aqui 
+		}*/
 }
