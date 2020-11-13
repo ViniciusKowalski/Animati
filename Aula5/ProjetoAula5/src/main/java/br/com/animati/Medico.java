@@ -6,7 +6,7 @@ public class Medico {
 	private String profissao;
 	private ConselhoProfissionalType conselhoProfissional;
 	private String crm;
-	private String cns;
+	private String cns; //Cartão Nacional de Saúde
 	private EstadoType estadoCrm;
 	private Boolean solicitante;
 	private Boolean executor;
